@@ -11,20 +11,37 @@ import java.util.List;
 public class RealEstateService {
 
     @Autowired
-    private RealEstateRepository realEstateRepositor;
+    private RealEstateRepository realEstateRepository;
 
     public RealEstate getRealEstateId(int id) {
-        RealEstate realEstate = realEstateRepositor.selectRealEstateId(id);
+        RealEstate realEstate = realEstateRepository.selectRealEstateId(id);
         return realEstate;
     }
 
     public List<RealEstate> getRealEstateRent(int rentPrice) {
-        List<RealEstate> realEstateList = realEstateRepositor.selectRealEstateRent(rentPrice);
+        List<RealEstate> realEstateList = realEstateRepository.selectRealEstateRent(rentPrice);
         return realEstateList;
     }
 
     public List<RealEstate> getRealEstateListByAreaAndPrice(int area, int price) {
-        List<RealEstate> realEstateList = realEstateRepositor.selectRealEstateListByAreaAndPrice(area, price);
+        List<RealEstate> realEstateList = realEstateRepository.selectRealEstateListByAreaAndPrice(area, price);
         return realEstateList;
+    }
+
+    public int insertRealEstateByObject(RealEstate realEstate) {
+        int count = realEstateRepository.insertRealEstateByObject(realEstate);
+        return count;
+    }
+
+    public int insertRealEstateByParameter(
+            int realtorId
+            , String address
+            , int area
+            , String type
+            , int price
+            , int rentPrice
+    ) {
+        int count = realEstateRepository.insertRealEstateByParameter(realtorId, address, area, type, price, rentPrice);
+        return count;
     }
 }

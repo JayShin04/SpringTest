@@ -23,4 +23,10 @@ public interface RealEstateRepository {
             , @Param("price") int price
             , @Param("rentPrice") int rentPrice
     );
+
+    public int updateRealEstate(
+            @Param("id") int id
+            , @Param("type") String type
+            , @Param("price") int price
+    );
 }

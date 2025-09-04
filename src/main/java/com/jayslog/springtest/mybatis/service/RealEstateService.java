@@ -44,4 +44,10 @@ public class RealEstateService {
         int count = realEstateRepository.insertRealEstateByParameter(realtorId, address, area, type, price, rentPrice);
         return count;
     }
+
+    public int updateRealEstate(int id, String type, int price) {
+
+        int count = realEstateRepository.updateRealEstate(id, type, price);
+        return count;
+    }
 }

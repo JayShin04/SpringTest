@@ -63,4 +63,13 @@ public class RealEstateController {
         int count = realEstateService.insertRealEstateByParameter(realtorId, "썅떼빌리버 오피스텔 814호", 45, "월세", 100000, 120);
         return "입력 성공 : " + count;
     }
+
+
+    @RequestMapping("update/1")
+    @ResponseBody
+    public String editRealEstate() {
+        // type전세,  price 70000 id가 22
+        int count = realEstateService.updateRealEstate(22, "전세", 70000);
+        return "입력 성공 : " + count;
+    }
 }

@@ -50,4 +50,9 @@ public class RealEstateService {
         int count = realEstateRepository.updateRealEstate(id, type, price);
         return count;
     }
+
+    public int deleteRealEstate(int id) {
+        int count =  realEstateRepository.deleteRealEstate(id);
+        return count;
+    }
 }

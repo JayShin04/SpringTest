@@ -29,4 +29,6 @@ public interface RealEstateRepository {
             , @Param("type") String type
             , @Param("price") int price
     );
+
+    public int deleteRealEstate(@Param("id") int id);
 }
